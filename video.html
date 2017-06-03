@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+</head>
+<title>duitang 视频</title>
+<meta name="keywords" content="duitang 视频" />
+<link href="http://www.duitang.com/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" href="./css/base/reset.css" />
+<link rel="stylesheet" href="./css/module/h5-video.css" />
+<style>
+  html, body {
+    background-color: #000;
+  }
+
+  #pg-topbars {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, .4);
+  }
+  #pg-topbars .pg-app-icon img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 6px 8px 0 15px;
+  }
+  #pg-topbars .pg-app-info {
+    flex: 1;
+    line-height: 44px;
+    font-size: 13px;
+    color: #fff;
+  }
+
+  #pg-topbars .pg-app-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    width: 48px;
+    height: 30px;
+    line-height: 1.0;
+    margin: 7px 15px 0 0;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 13px;
+    color: rgb(3, 169, 244);
+    background-color: #fff;
+  }
+
+  #pg-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+
+  #pg-video-desc {
+    position: fixed;
+    z-index: 9998;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 64px;
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 100%);
+  }
+  #pg-video-desc-in {
+    position: relative;
+    z-index: 9999;
+    height: 100%;
+  }
+  #pg-video-desc h3{
+    position: absolute;
+    top: auto;
+    left: 0;
+    bottom: 15px;
+    overflow: hidden;
+    max-height: 44px;
+    line-height: 15px;
+    margin: 0 15px;
+    font-size: 13px;
+    color: #fff;
+  }
+
+  #pg-over-mask{
+    display: none;
+    position: fixed;
+    overflow: hidden;
+    z-index: 9996;
+    top: 0;
+    left: 0;
+    
+  }
+  #pg-over-mask img{
+    display: block;
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -ms-filter: blur(4px);    
+    filter: blur(4px);
+  }
+
+  #pg-over-frame{
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    z-index: 9997;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .4);
+  }
+
+  #pg-over-frame img{
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: -50px auto 0 auto;
+  }
+
+  #pg-over-frame h4{
+    margin: 8px 0 0;
+    line-height: 23px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+</style>
+</head>
+
+<body>
+
+<section id="pg-topbars">
+  <div class="pg-app-icon">
+    <img src="app_icon.png" />
+  </div>
+  <div class="pg-app-info">应用名称与描述</div>
+  <a class="pg-app-down" href="javascript:;">下载</a>
+</section>
+
+
+<section id="pg-content">
+  <div id="pg-video-desc">
+    <div id="pg-video-desc-in">
+      <h3>#这是标题多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试这是标题多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试多行标题测试</h3>
+    </div>
+  </div>
+
+  <!-- video loop autoplay preload 根据需求可选择开启或不开启 
+    http://share.faceu.mobi/@/v/201705221133/63e5e593d58a1d5ad129977f005ec12f.mp4
+    http://v-1.dtstatic.com/20170307/11191488856782/mp4_720p_2500k/14890412-1.mp4
+    https://audio-1.dtstatic.com/20170524/185230/girl.mp3
+    loop="loop"
+    autoplay="autoplay"
+    preload="preload"
+  -->
+  <figure id="md-h5-video-fig-1" class="md-h5-video-fig">
+    <video  webkit-playsinline="true"
+            playsinline="true"
+            preload="preload"
+            src="http://share.faceu.mobi/@/v/201705221133/63e5e593d58a1d5ad129977f005ec12f.mp4"
+            poster="./cover.jpeg"
+            ></video>
+  </figure>
+
+  <!-- https://a-ssl.duitang.com/uploads/item/201612/21/20161221213222_xv2Nc.jpeg -->
+  <div id="pg-over-mask">
+    <img src="./cover.jpeg" />
+  </div>
+  <div id="pg-over-frame">
+    <img width="60" height="60" src="./app_icon.png" />
+    <h4>堆糖应用</h4>
+  </div>
+</section>
+
+<!-- <script src="./js/zepto/zepto.min.js"></script>
+<script src="./js/zepto/detect.js"></script>
+<script src="./js/zepto/deferred.js"></script>
+<script src="./js/zepto/touch.js"></script>
+<script src="./js/zepto/data.js"></script>
+<script src="./js/zepto/fx.js"></script>
+<script src="./js/zepto/fx-methods.js"></script> -->
+<script src="./js/zepto/zepto.merged.js"></script>
+<script src="./js/module/h5-video.js"></script>
+<script>
+  $(function () {
+
+    // 视频组件
+    var $fig = $('#md-h5-video-fig-1');
+    // 视频描述
+    var $desc = $('#pg-video-desc');
+    // app介绍和下载
+    var $topbars = $('#pg-topbars');
+    // 播放结束后的引导mask
+    var $overmask = $('#pg-over-mask');
+    // 播放结束后的引导
+    var $overframe = $('#pg-over-frame');
+
+    
+
+
+
+    // init video fig
+    $fig
+    .h5Video({
+      'width': 360,
+      'height': 840,
+      'bgm': './girl.mp3',
+      'isPosterFull': true,
+      'onFullscreen': function () {
+        hideTopAndBottom();
+      },
+      'onExitFullscreen': function () {
+        showTopAndBottom();
+      },
+      'onClickPlay': function () {
+        // 准备视频播放就应该离开隐藏 overframe
+        $overframe.add($overmask).css({
+          'display': 'none'
+        })
+        $fig.css({
+          'display': 'block'
+        });
+      },
+      'onStartPlay': function () {
+        hideTopAndBottom();
+      },
+      'onEnded': function () {
+        // 如果不是循环播放，则播放完之后触发 ended 事件
+        var $w = $(window);
+        var windowWidth = $w.width();
+        var windowHeight = $w.height();
+
+        // 隐藏video fig
+        $fig.animate({
+          'margin-left': windowWidth
+        }, 300, function () {
+          $fig.css({
+            'margin-left': '0',
+            'display': 'none'
+          })
+        })
+
+        // 显示播放结束后的 over mask and frame
+        $overmask.add($overframe).css({
+          'display': 'flex',
+          'left': -windowWidth,
+          'width': windowWidth,
+          'height': windowHeight
+        })
+
+        $overmask.find('img').css({
+          'width': windowWidth + 40,
+          'height': windowHeight + 40,
+          'margin': '-20px 0 0 -20px'
+        })
+       
+        $overmask.add($overframe).animate({
+          'left': 0
+        }, 300)
+
+        showTopAndBottom();
+      }
+    });
+
+    // 示例：播放结束后点击触发重播
+    $overframe.find('img').tap(function () {
+      // 重播
+      $fig.trigger('h5Video:replay');
+    });
+
+    function showTopAndBottom () {
+      // 显示顶部下载条和底部描述
+      $topbars.animate({
+        'top': 0
+      }, 1000);
+
+      $desc.animate({
+        'bottom': 0
+      }, 1000);
+    }
+
+    function hideTopAndBottom () {
+      // 显示顶部下载条和底部描述
+      $topbars.animate({
+        'top': -($topbars.height())
+      }, 1000);
+
+      $desc.animate({
+        'bottom': -($desc.height())
+      }, 1000);
+    }
+
+    // resize 之后要重新设置 over mask 的高度
+    $(window).on('resize', function() {
+      console.log('resizing');
+      $overmask.css({
+        'height': $(window).height()
+      })
+    })
+  });
+
+</script>
+
+
+</body>
+</html>
